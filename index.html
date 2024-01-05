@@ -37,6 +37,23 @@
     </nav>
 
 
+    <div class="clearfix  container">
+        <img src="/1704473302894.jpg" class="col-md-6 float-md-end mb-3 ms-md-3 width-199" alt="...">
+
+        <p>
+            A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+        </p>
+
+        <p>
+            As you can see the paragraphs gracefully wrap around the floated image. Now imagine how this would look with some actual content in here, rather than just this boring placeholder text that goes on and on, but actually conveys no tangible information at.
+            It simply takes up space and should not really be read.
+        </p>
+
+        <p>
+            And yet, here you are, still persevering in reading this placeholder text, hoping for some more insights, or some hidden easter egg of content. A joke, perhaps. Unfortunately, there's none of that here.
+        </p>
+    </div>
+
 
 
 
@@ -46,14 +63,27 @@
 
 
 
-    <footer>
-        <ul>
-            <li>Rezhwan</li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </footer>
+    <div class="card text-center">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-body-secondary">
+            2 days ago
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <p id="demo"></p>
 </body>
 
 </html>
@@ -77,4 +107,45 @@
     button {
         border-radius: 70px !important;
     }
+    /*style count down */
+    
+    #demo {
+        background-color: #2d2d2d;
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+        color: yellow;
+    }
 </style>
+
+
+<script>
+    // لێرەدە ئەو کاتە دابنێ کە دەتەوێت بیژمێریت
+    var countDownDate = new Date("Jan 1, 2025 15:37:25").getTime();
+
+    // هەموو چرکەیەک کاتەکە کەم بکەرەوە
+    var x = setInterval(function() {
+        // هێنانی کاتی ئەمڕۆ
+        var now = new Date().getTime();
+
+        // مەودای نێوان کاتی ئێستا و بەرواری ئەو ڕۆژەی کە دەمانەوێت بیژمێرین بۆی
+        var distance = countDownDate - now;
+
+        // پاشان ئەو کاتەی کە هەمانە دەریدەکەین بە پێی ڕۆژ ، سەعات، دەقە، چرکە
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // ئەنجامەکەی بخەرە ناو ئەو ئێلێمێنتەی کە ئایدیەکەی ناوی (Demo) ــیە
+        document.getElementById("demo").innerHTML =
+            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // لێرەدا حسابی ئەوە دەکەین ئەگەر کاتەکە تەواو بوو
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "بەسەرچووە";
+        }
+    }, 1000);
+</script>
