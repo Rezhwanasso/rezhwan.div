@@ -1,1 +1,1 @@
-alert("La zher Chak Krdnaia")
+alert("لەژێر کار کردنایە")
