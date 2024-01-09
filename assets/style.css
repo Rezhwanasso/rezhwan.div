@@ -50,3 +50,15 @@ button {
     margin-top: 0px;
     color: yellow;
 }
+
+
+/*loyout xanan xana */
+
+.layout {
+    width: 1366px;
+    height: 768px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
